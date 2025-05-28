@@ -1,776 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nikhil - Full Stack Developer</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-    />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#6366f1",
-              secondary: "#4f46e5",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-      .skill-card:hover { transform: translateY(-5px); }
-      .project-card:hover { transform: translateY(-5px); }
-      .nav-link { position: relative; }
-      .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: #6366f1;
-      transition: width 0.3s;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikhil - Full Stack Developer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#6366f1",
+        secondary: "#4f46e5",
+      },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.skill-card:hover { transform: translateY(-5px); }
+.project-card:hover { transform: translateY(-5px); }
+.nav-link { position: relative; }
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #6366f1;
+transition: width 0.3s;
+}
+.nav-link:hover::after { width: 100%; }
+.active::after { width: 100%; }
+</style>
+</head>
+<body class="bg-white font-['Inter']">
+<header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+<nav class="container mx-auto px-6 h-20 flex items-center justify-between">
+<a href="#" class="text-2xl font-['Pacifico'] text-gray-900">Nikhil</a>
+<button id="menuBtn" class="lg:hidden text-gray-900 focus:outline-none">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+<div id="mobileMenu" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 lg:relative lg:inset-auto lg:bg-transparent lg:translate-x-0">
+<div class="h-20 flex items-center justify-between px-6 lg:hidden">
+<a href="#" class="text-2xl font-['Pacifico'] text-gray-900">Nikhil</a>
+<button id="closeBtn" class="text-gray-900 focus:outline-none">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 p-6 lg:p-0">
+<a href="#home" class="nav-link active text-gray-900 font-medium">Home</a>
+<a href="#about" class="nav-link text-gray-600 hover:text-gray-900">About</a>
+<a href="#skills" class="nav-link text-gray-600 hover:text-gray-900">Skills</a>
+<a href="#projects" class="nav-link text-gray-600 hover:text-gray-900">Projects</a>
+<a href="#contact" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+<button class="!rounded-button bg-primary text-white px-6 py-2.5 font-medium hover:bg-primary/90 transition-colors whitespace-nowrap w-full lg:w-auto">Hire Me</button>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<section id="home" class="min-h-[calc(100vh-5rem)] flex items-center relative" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20workspace%20with%20laptop%20showing%20code%20on%20screen%2C%20soft%20ambient%20lighting%2C%20minimalist%20desk%20setup%20with%20coffee%20cup%20and%20plants%2C%20professional%20development%20environment%2C%20high-end%20photography&width=1920&height=1080&seq=6&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 to-white/50"></div>
+<div class="container mx-auto px-6 relative">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-bold text-gray-900 mb-6">Full Stack Developer Creating Modern Web Solutions</h1>
+<p class="text-xl text-gray-800">Specializing in crafting custom websites and web applications that deliver exceptional user experiences and drive business growth.</p>
+<div class="flex gap-4 mt-8">
+<button class="!rounded-button bg-white text-gray-900 px-8 py-3 font-medium hover:bg-gray-50 transition-colors whitespace-nowrap border-2 border-gray-200">Contact Me</button>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-2 lg:order-1">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
+<p class="text-gray-600 mb-6">Hi, I'm Nikhil, a passionate Full Stack Developer with expertise in creating modern web solutions. With a strong foundation in both frontend and backend technologies, I specialize in building scalable, user-friendly applications that deliver exceptional value.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-code-box-line text-primary"></i>
+</div>
+<span class="text-gray-700">4+ years of development experience</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-code-box-line text-primary"></i>
+</div>
+<span class="text-gray-700">Expert in building custom websites and web applications</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-customer-service-2-line text-primary"></i>
+</div>
+<span class="text-gray-700">Strong focus on client satisfaction</span>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<div class="rounded-2xl overflow-hidden shadow-lg">
+<img src="https://static.readdy.ai/image/0a57a6211d60e97fbffebc060a2f3255/5c5918e186838db6de8a29785beaf633.jpeg" alt="Nikhil's Profile" class="w-full h-auto object-cover">
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="skills" class="py-24 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Experienced in a wide range of modern web technologies and frameworks</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300">
+<h3 class="text-lg font-semibold text-gray-900 mb-6">Frontend</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-html5-line text-orange-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">HTML5</span>
+<span class="text-sm text-gray-600">95%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-orange-500 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-css3-line text-blue-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">CSS3</span>
+<span class="text-sm text-gray-600">90%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-blue-500 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-javascript-line text-yellow-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">JavaScript</span>
+<span class="text-sm text-gray-600">85%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-yellow-500 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300">
+<h3 class="text-lg font-semibold text-gray-900 mb-6">Backend</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-php-line text-indigo-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">PHP</span>
+<span class="text-sm text-gray-600">90%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-indigo-500 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-nodejs-line text-green-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">Node.js</span>
+<span class="text-sm text-gray-600">80%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-green-500 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-database-2-line text-blue-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">MySQL</span>
+<span class="text-sm text-gray-600">85%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-blue-500 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300">
+<h3 class="text-lg font-semibold text-gray-900 mb-6">Frameworks</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-code-line text-red-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">Laravel</span>
+<span class="text-sm text-gray-600">85%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-red-500 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-code-line text-purple-500"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">CodeIgniter</span>
+<span class="text-sm text-gray-600">80%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-purple-500 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300">
+<h3 class="text-lg font-semibold text-gray-900 mb-6">CMS</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-wordpress-line text-blue-600"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">WordPress</span>
+<span class="text-sm text-gray-600">95%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-blue-600 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-shopping-bag-line text-green-600"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">Shopify</span>
+<span class="text-sm text-gray-600">85%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-green-600 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="projects" class="py-24">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">A selection of my recent work</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-sm transition-transform duration-300">
+<div class="aspect-video bg-gray-100" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20minimalist%20e-commerce%20website%20interface%20with%20clean%20product%20layout%2C%20professional%20photography%2C%20white%20background%2C%20elegant%20typography%2C%20high-end%20design%20elements&width=600&height=400&seq=2&orientation=landscape'); background-size: cover;"></div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">E-commerce Platform</h3>
+<p class="text-gray-600 mb-4">A full-featured online shopping platform built with Laravel and Vue.js</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">Laravel</span>
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">Vue.js</span>
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">MySQL</span>
+</div>
+<div class="flex gap-4">
+<a href="#" class="text-primary hover:text-primary/80">Live Demo</a>
+<a href="#" class="text-gray-600 hover:text-gray-900">Source Code</a>
+</div>
+</div>
+</div>
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-sm transition-transform duration-300">
+<div class="aspect-video bg-gray-100" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20dashboard%20interface%20with%20data%20visualization%2C%20analytics%20graphs%2C%20clean%20layout%2C%20professional%20design%2C%20light%20theme%2C%20minimalist%20style&width=600&height=400&seq=3&orientation=landscape'); background-size: cover;"></div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Analytics Dashboard</h3>
+<p class="text-gray-600 mb-4">Real-time analytics dashboard with advanced data visualization</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">React</span>
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">Node.js</span>
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">D3.js</span>
+</div>
+<div class="flex gap-4">
+<a href="#" class="text-primary hover:text-primary/80">Live Demo</a>
+<a href="#" class="text-gray-600 hover:text-gray-900">Source Code</a>
+</div>
+</div>
+</div>
+<div class="project-card bg-white rounded-lg overflow-hidden shadow-sm transition-transform duration-300">
+<div class="aspect-video bg-gray-100" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20mobile%20app%20interface%20with%20social%20media%20features%2C%20clean%20design%2C%20user%20profiles%2C%20messaging%20interface%2C%20light%20theme%2C%20professional%20layout&width=600&height=400&seq=4&orientation=landscape'); background-size: cover;"></div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Social Platform API</h3>
+<p class="text-gray-600 mb-4">RESTful API service for a social networking platform</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">Node.js</span>
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">Express</span>
+<span class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full">MongoDB</span>
+</div>
+<div class="flex gap-4">
+<a href="#" class="text-primary hover:text-primary/80">Documentation</a>
+<a href="#" class="text-gray-600 hover:text-gray-900">Source Code</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-24 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+<p class="text-gray-600">Let's discuss your project and see how I can help</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-600">Email</div>
+<a href="mailto:nikhilvashisth965@gmail.com" class="text-gray-900">nikhilvashisth965@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-600">Phone</div>
+<a href="tel:+917807965343" class="text-gray-900">+91 7807965343</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-whatsapp-line text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-600">WhatsApp</div>
+<a href="https://wa.me/917807965343" target="_blank" class="text-gray-900 hover:text-primary">Chat on WhatsApp</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-linkedin-line text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-600">LinkedIn</div>
+<a href="https://linkedin.com/in/nikhil-vashisth-b414851bb" target="_blank" class="text-gray-900 hover:text-primary">View Profile</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<div class="text-sm text-gray-600">Response Time</div>
+<div class="text-gray-900">Within 24 hours</div>
+</div>
+</div>
+</div>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+<input type="text" class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
+<select class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none appearance-none bg-white pr-8" required>
+<option value="">Select a project type</option>
+<option value="web-app">Web Application</option>
+<option value="website">Website</option>
+<option value="api">API Development</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea rows="4" class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none" required></textarea>
+</div>
+<button type="submit" class="!rounded-button w-full bg-primary text-white px-6 py-3 font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="col-span-2">
+<a href="#" class="text-2xl font-['Pacifico']">Nikhil</a>
+<p class="mt-4 text-gray-400 max-w-md">Passionate full-stack developer creating modern web solutions with cutting-edge technologies.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+<li><a href="#skills" class="text-gray-400 hover:text-white">Skills</a></li>
+<li><a href="#projects" class="text-gray-400 hover:text-white">Projects</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+<div class="flex gap-4">
+<a href="https://linkedin.com/in/nikhil-vashisth-b414851bb" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="https://wa.me/917807965343" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+<i class="ri-whatsapp-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400">© 2025 Nikhil. All rights reserved.</p>
+<button id="backToTop" class="mt-4 md:mt-0 !rounded-button bg-gray-800 text-white px-6 py-2 hover:bg-gray-700 transition-colors whitespace-nowrap">Back to Top</button>
+</div>
+</div>
+</footer>
+<script id="navigation">
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+  const menuBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileLinks = mobileMenu.querySelectorAll("a");
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      header.classList.remove("shadow-md");
+      return;
+    }
+    if (currentScroll > lastScroll) {
+      header.classList.add("shadow-md");
+    } else {
+      header.classList.remove("shadow-md");
+    }
+    lastScroll = currentScroll;
+  });
+  function toggleMenu() {
+    mobileMenu.classList.toggle("translate-x-full");
+    document.body.classList.toggle("overflow-hidden");
+  }
+  menuBtn.addEventListener("click", toggleMenu);
+  closeBtn.addEventListener("click", toggleMenu);
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+      document.body.classList.remove("overflow-hidden");
+    });
+  });
+});
+</script>
+<script id="smoothScroll">
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+        });
       }
-      .nav-link:hover::after { width: 100%; }
-      .active::after { width: 100%; }
-    </style>
-  </head>
-  <body class="bg-white font-['Inter']">
-    <header
-      class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100"
-    >
-      <nav
-        class="container mx-auto px-6 h-20 flex items-center justify-between"
-      >
-        <a href="#" class="text-2xl font-['Pacifico'] text-gray-900">Nikhil</a>
-        <button id="menuBtn" class="lg:hidden text-gray-900 focus:outline-none">
-          <i class="ri-menu-line text-2xl"></i>
-        </button>
-        <div
-          id="mobileMenu"
-          class="fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transform translate-x-full transition-transform duration-300 lg:relative lg:inset-auto lg:bg-transparent lg:translate-x-0"
-        >
-          <div class="h-20 flex items-center justify-between px-6 lg:hidden">
-            <a href="#" class="text-2xl font-['Pacifico'] text-gray-900"
-              >Nikhil</a
-            >
-            <button id="closeBtn" class="text-gray-900 focus:outline-none">
-              <i class="ri-close-line text-2xl"></i>
-            </button>
-          </div>
-          <div
-            class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 p-6 lg:p-0"
-          >
-            <a href="#home" class="nav-link active text-gray-900 font-medium"
-              >Home</a
-            >
-            <a href="#about" class="nav-link text-gray-600 hover:text-gray-900"
-              >About</a
-            >
-            <a href="#skills" class="nav-link text-gray-600 hover:text-gray-900"
-              >Skills</a
-            >
-            <a
-              href="#projects"
-              class="nav-link text-gray-600 hover:text-gray-900"
-              >Projects</a
-            >
-            <a
-              href="#contact"
-              class="nav-link text-gray-600 hover:text-gray-900"
-              >Contact</a
-            >
-            <button
-              class="!rounded-button bg-primary text-white px-6 py-2.5 font-medium hover:bg-primary/90 transition-colors whitespace-nowrap w-full lg:w-auto"
-            >
-              Hire Me
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main class="pt-20">
-      <section
-        id="home"
-        class="min-h-[calc(100vh-5rem)] flex items-center relative"
-        style="background-image: url('https://readdy.ai/api/search-image?query=minimal%20tech%20background%20with%20light%20colors%2C%20soft%20geometric%20patterns%2C%20subtle%20gradients%20in%20white%20and%20light%20blue%2C%20very%20clean%20and%20modern%20design%2C%20perfect%20for%20text%20overlay&width=1920&height=1080&seq=5&orientation=landscape'); background-size: cover; background-position: center;"
-      >
-        <div class="absolute inset-0 bg-white/80"></div>
-        <div class="container mx-auto px-6 relative">
-          <div class="max-w-2xl">
-            <h1
-              class="text-5xl font-bold text-gray-900 mb-6 [text-shadow:_0_1px_2px_rgb(255_255_255_/_0.8)]"
-            >
-              Full Stack Developer Creating Modern Web Solutions
-            </h1>
-            <p
-              class="text-xl text-gray-800 [text-shadow:_0_1px_2px_rgb(255_255_255_/_0.8)]"
-            >
-              Transforming ideas into powerful web applications with
-              cutting-edge technologies and clean code practices.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="skills" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              Technical Skills
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-              Experienced in a wide range of modern web technologies and
-              frameworks
-            </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div
-              class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300"
-            >
-              <h3 class="text-lg font-semibold text-gray-900 mb-6">Frontend</h3>
-              <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-html5-line text-orange-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >HTML5</span
-                      >
-                      <span class="text-sm text-gray-600">95%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-orange-500 rounded-full"
-                        style="width: 95%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-css3-line text-blue-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >CSS3</span
-                      >
-                      <span class="text-sm text-gray-600">90%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-blue-500 rounded-full"
-                        style="width: 90%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-javascript-line text-yellow-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >JavaScript</span
-                      >
-                      <span class="text-sm text-gray-600">85%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-yellow-500 rounded-full"
-                        style="width: 85%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300"
-            >
-              <h3 class="text-lg font-semibold text-gray-900 mb-6">Backend</h3>
-              <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-php-line text-indigo-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700">PHP</span>
-                      <span class="text-sm text-gray-600">90%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-indigo-500 rounded-full"
-                        style="width: 90%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-nodejs-line text-green-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >Node.js</span
-                      >
-                      <span class="text-sm text-gray-600">80%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-green-500 rounded-full"
-                        style="width: 80%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-database-2-line text-blue-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >MySQL</span
-                      >
-                      <span class="text-sm text-gray-600">85%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-blue-500 rounded-full"
-                        style="width: 85%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300"
-            >
-              <h3 class="text-lg font-semibold text-gray-900 mb-6">
-                Frameworks
-              </h3>
-              <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-code-line text-red-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >Laravel</span
-                      >
-                      <span class="text-sm text-gray-600">85%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-red-500 rounded-full"
-                        style="width: 85%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-code-line text-purple-500"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >CodeIgniter</span
-                      >
-                      <span class="text-sm text-gray-600">80%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-purple-500 rounded-full"
-                        style="width: 80%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="skill-card bg-white p-8 rounded-lg shadow-sm transition-transform duration-300"
-            >
-              <h3 class="text-lg font-semibold text-gray-900 mb-6">CMS</h3>
-              <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-wordpress-line text-blue-600"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >WordPress</span
-                      >
-                      <span class="text-sm text-gray-600">95%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-blue-600 rounded-full"
-                        style="width: 95%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-shopping-bag-line text-green-600"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-gray-700"
-                        >Shopify</span
-                      >
-                      <span class="text-sm text-gray-600">85%</span>
-                    </div>
-                    <div class="h-2 bg-gray-100 rounded-full">
-                      <div
-                        class="h-2 bg-green-600 rounded-full"
-                        style="width: 85%"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="projects" class="py-24">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              Featured Projects
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-              A selection of my recent work
-            </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-              class="project-card bg-white rounded-lg overflow-hidden shadow-sm transition-transform duration-300"
-            >
-              <div
-                class="aspect-video bg-gray-100"
-                style="background-image: url('https://readdy.ai/api/search-image?query=modern%20minimalist%20e-commerce%20website%20interface%20with%20clean%20product%20layout%2C%20professional%20photography%2C%20white%20background%2C%20elegant%20typography%2C%20high-end%20design%20elements&width=600&height=400&seq=2&orientation=landscape'); background-size: cover;"
-              ></div>
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                  E-commerce Platform
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  A full-featured online shopping platform built with Laravel
-                  and Vue.js
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >Laravel</span
-                  >
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >Vue.js</span
-                  >
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >MySQL</span
-                  >
-                </div>
-                <div class="flex gap-4">
-                  <a href="#" class="text-primary hover:text-primary/80"
-                    >Live Demo</a
-                  >
-                  <a href="#" class="text-gray-600 hover:text-gray-900"
-                    >Source Code</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div
-              class="project-card bg-white rounded-lg overflow-hidden shadow-sm transition-transform duration-300"
-            >
-              <div
-                class="aspect-video bg-gray-100"
-                style="background-image: url('https://readdy.ai/api/search-image?query=modern%20dashboard%20interface%20with%20data%20visualization%2C%20analytics%20graphs%2C%20clean%20layout%2C%20professional%20design%2C%20light%20theme%2C%20minimalist%20style&width=600&height=400&seq=3&orientation=landscape'); background-size: cover;"
-              ></div>
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                  Analytics Dashboard
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Real-time analytics dashboard with advanced data visualization
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >React</span
-                  >
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >Node.js</span
-                  >
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >D3.js</span
-                  >
-                </div>
-                <div class="flex gap-4">
-                  <a href="#" class="text-primary hover:text-primary/80"
-                    >Live Demo</a
-                  >
-                  <a href="#" class="text-gray-600 hover:text-gray-900"
-                    >Source Code</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div
-              class="project-card bg-white rounded-lg overflow-hidden shadow-sm transition-transform duration-300"
-            >
-              <div
-                class="aspect-video bg-gray-100"
-                style="background-image: url('https://readdy.ai/api/search-image?query=modern%20mobile%20app%20interface%20with%20social%20media%20features%2C%20clean%20design%2C%20user%20profiles%2C%20messaging%20interface%2C%20light%20theme%2C%20professional%20layout&width=600&height=400&seq=4&orientation=landscape'); background-size: cover;"
-              ></div>
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                  Social Platform API
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  RESTful API service for a social networking platform
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >Node.js</span
-                  >
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >Express</span
-                  >
-                  <span
-                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-                    >MongoDB</span
-                  >
-                </div>
-                <div class="flex gap-4">
-                  <a href="#" class="text-primary hover:text-primary/80"
-                    >Documentation</a
-                  >
-                  <a href="#" class="text-gray-600 hover:text-gray-900"
-                    >Source Code</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-          <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-              <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                Get in Touch
-              </h2>
-              <p class="text-gray-600">
-                Let's discuss your project and see how I can help
-              </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                  Contact Information
-                </h3>
-                <div class="space-y-4">
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10"
-                    >
-                      <i class="ri-mail-line text-primary"></i>
-                    </div>
-                    <div>
-                      <div class="text-sm text-gray-600">Email</div>
-                      <a
-                        href="mailto:nikhilvashisth965@gmail.com"
-                        class="text-gray-900"
-                        >nikhilvashisth965@gmail.com</a
-                      >
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10"
-                    >
-                      <i class="ri-phone-line text-primary"></i>
-                    </div>
-                    <div>
-                      <div class="text-sm text-gray-600">Phone</div>
-                      <a href="tel:+917807965343" class="text-gray-900"
-                        >+91 7807965343</a
-                      >
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10"
-                    >
-                      <i class="ri-whatsapp-line text-primary"></i>
-                    </div>
-                    <div>
-                      <div class="text-sm text-gray-600">WhatsApp</div>
-                      <a
-                        href="https://wa.me/917807965343"
-                        target="_blank"
-                        class="text-gray-900 hover:text-primary"
-                        >Chat on WhatsApp</a
-                      >
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10"
-                    >
-                      <i class="ri-linkedin-line text-primary"></i>
-                    </div>
-                    <div>
-                      <div class="text-sm text-gray-600">LinkedIn</div>
-                      <a
-                        href="https://linkedin.com/in/nikhil-vashisth-b414851bb"
-                        target="_blank"
-                        class="text-gray-900 hover:text-primary"
-                        >View Profile</a
-                      >
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10"
-                    >
-                      <i class="ri-time-line text-primary"></i>
-                    </div>
-                    <div>
-                      <div class="text-sm text-gray-600">Response Time</div>
-                      <div class="text-gray-900">Within 24 hours</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <form class="space-y-6">
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2"
-                    >Name</label
-                  >
-                  <input
-                    type="text"
-                    class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2"
-                    >Project Type</label
-                  >
-                  <select
-                    class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none appearance-none bg-white pr-8"
-                    required
-                  >
-                    <option value="">Select a project type</option>
-                    <option value="web-app">Web Application</option>
-                    <option value="website">Website</option>
-                    <option value="api">API Development</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2"
-                    >Message</label
-                  >
-                  <textarea
-                    rows="4"
-                    class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-0 outline-none"
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="!rounded-button w-full bg-primary text-white px-6 py-3 font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="bg-gray-900 text-white py-12">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="col-span-2">
-            <a href="#" class="text-2xl font-['Pacifico']">Nikhil</a>
-            <p class="mt-4 text-gray-400 max-w-md">
-              Passionate full-stack developer creating modern web solutions with
-              cutting-edge technologies.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-              <li>
-                <a href="#home" class="text-gray-400 hover:text-white">Home</a>
-              </li>
-              <li>
-                <a href="#about" class="text-gray-400 hover:text-white"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a href="#skills" class="text-gray-400 hover:text-white"
-                  >Skills</a
-                >
-              </li>
-              <li>
-                <a href="#projects" class="text-gray-400 hover:text-white"
-                  >Projects</a
-                >
-              </li>
-              <li>
-                <a href="#contact" class="text-gray-400 hover:text-white"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
-            <div class="flex gap-4">
-              <a
-                href="https://linkedin.com/in/nikhil-vashisth-b414851bb"
-                target="_blank"
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-              >
-                <i class="ri-linkedin-line"></i>
-              </a>
-              <a
-                href="https://wa.me/917807965343"
-                target="_blank"
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-              >
-                <i class="ri-whatsapp-line"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p class="text-gray-400">© 2025 Nikhil. All rights reserved.</p>
-          <button
-            id="backToTop"
-            class="mt-4 md:mt-0 !rounded-button bg-gray-800 text-white px-6 py-2 hover:bg-gray-700 transition-colors whitespace-nowrap"
-          >
-            Back to Top
-          </button>
-        </div>
-      </div>
-    </footer>
-    <script id="navigation">
-      document.addEventListener("DOMContentLoaded", function () {
-        const header = document.querySelector("header");
-        const menuBtn = document.getElementById("menuBtn");
-        const closeBtn = document.getElementById("closeBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const mobileLinks = mobileMenu.querySelectorAll("a");
-        let lastScroll = 0;
-        window.addEventListener("scroll", () => {
-          const currentScroll = window.pageYOffset;
-          if (currentScroll <= 0) {
-            header.classList.remove("shadow-md");
-            return;
-          }
-          if (currentScroll > lastScroll) {
-            header.classList.add("shadow-md");
-          } else {
-            header.classList.remove("shadow-md");
-          }
-          lastScroll = currentScroll;
-        });
-        function toggleMenu() {
-          mobileMenu.classList.toggle("translate-x-full");
-          document.body.classList.toggle("overflow-hidden");
-        }
-        menuBtn.addEventListener("click", toggleMenu);
-        closeBtn.addEventListener("click", toggleMenu);
-        mobileLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("translate-x-full");
-            document.body.classList.remove("overflow-hidden");
-          });
-        });
-      });
-    </script>
-    <script id="smoothScroll">
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-        document.getElementById("backToTop").addEventListener("click", function () {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
-  </body>
+    });
+  });
+  document.getElementById("backToTop").addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+</script>
+</body>
 </html>
